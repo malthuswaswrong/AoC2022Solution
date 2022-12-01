@@ -21,7 +21,7 @@ while (true)
     {
         Console.Write("Day (1 - 25): ");
         var inputDay = Console.ReadLine()!;
-        if (!int.TryParse(inputDay, out var day)) continue;
+        if (!int.TryParse(inputDay, out var day)) throw new InvalidInputException();
         IDay handle = day switch
         {
             1 => new Day01(),
