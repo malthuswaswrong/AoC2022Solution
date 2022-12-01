@@ -32,6 +32,5 @@ public class Day01 : IDay
         return calorieList.OrderByDescending(x => x);
     }
     public string SolvePart1(DataSet dataSet) => OrderedCalorieList(dataSet).First().ToString();
-    public string SolvePart2(DataSet dataSet) => OrderedCalorieList(dataSet).Take(3).Sum().ToString();
-    
+    public string SolvePart2(DataSet dataSet) => OrderedCalorieList(dataSet).Take(3).Sum().ToString();    
 }
