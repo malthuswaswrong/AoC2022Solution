@@ -23,8 +23,8 @@ public class Challenges
     }
 
     [Theory]
-    [InlineData(DataSet.Example, "")]
-    [InlineData(DataSet.Challenge, "")]
+    [InlineData(DataSet.Example, "15")]
+    [InlineData(DataSet.Challenge, "15337")]
     public void Day02_Part1(DataSet dataSet, string actual)
     {
         var cut = new Day02();
@@ -32,8 +32,8 @@ public class Challenges
     }
 
     [Theory]
-    [InlineData(DataSet.Example, "")]
-    [InlineData(DataSet.Challenge, "")]
+    [InlineData(DataSet.Example, "12")]
+    [InlineData(DataSet.Challenge, "11696")]
     public void Day02_Part2(DataSet dataSet, string actual)
     {
         var cut = new Day02();
