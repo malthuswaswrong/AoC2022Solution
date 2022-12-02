@@ -1,7 +1,4 @@
 ﻿using AoC2022.Data;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
-using static AoC2022.Days.Day02.CompetitionInput1;
 
 namespace AoC2022.Days;
 
@@ -14,14 +11,14 @@ public class Day02 : IDay
     }
     public string SolvePart1(DataSet dataSet)
     {
-        var dataList = _dataLoader.GetInputList(dataSet).Select(x => Day02.CompetitionInput1.Parse(x));
+        var dataList = _dataLoader.GetInputList(dataSet).Select(x => CompetitionInput1.Parse(x));
         long totalScore = dataList?.Sum(x => x.Score) ?? 0;
         return $"{totalScore}";
     }
 
     public string SolvePart2(DataSet dataSet)
     {
-        var dataList = _dataLoader.GetInputList(dataSet).Select(x => Day02.CompetitionInput2.Parse(x));
+        var dataList = _dataLoader.GetInputList(dataSet).Select(x => CompetitionInput2.Parse(x));
         long totalScore = dataList?.Sum(x => x.Score) ?? 0;
         return $"{totalScore}";
     }
@@ -78,7 +75,6 @@ public class Day02 : IDay
         {
             return new CompetitionInput1(input);
         }
-        
     }
     public class CompetitionInput2 : CompetitionInputBase
     {
