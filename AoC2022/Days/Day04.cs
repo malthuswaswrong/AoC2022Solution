@@ -10,9 +10,9 @@ public class Day04 : IDay
     {
         _dataLoader = dataLoader ?? new DefaultDataLoader(nameof(Day04));
     }
-
-    public string SolvePart1(DataSet dataSet) => $"{_dataLoader.GetInputList(dataSet).Where(x => FullRangeOverlap(GetRanges(x))).Count()}";
-    public string SolvePart2(DataSet dataSet) => $"{_dataLoader.GetInputList(dataSet).Where(x => PartialRangeOverlap(GetRanges(x))).Count()}";
+    
+    public string SolvePart1(DataSet dataSet) => $"{_dataLoader.GetInputList(dataSet).Where(x => Overlap(GetRanges(x), true)).Count()}";
+    public string SolvePart2(DataSet dataSet) => $"{_dataLoader.GetInputList(dataSet).Where(x => Overlap(GetRanges(x), false)).Count()}";
 
     private (Range, Range) GetRanges(string input)
     {
@@ -21,13 +21,9 @@ public class Day04 : IDay
         var t2 = segments[1].Split("-").Select(x => int.Parse(x)).ToList();
         return (new Range(t1[0], t1[1]), new Range(t2[0], t2[1]));
     }
-    private bool FullRangeOverlap((Range, Range) set) => Overlap(set.Item1, set.Item2, true);
-    
-    private bool PartialRangeOverlap((Range, Range) set) => Overlap(set.Item1, set.Item2, false);
-    
-    private bool Overlap(Range range1, Range range2, bool full) =>
+    private bool Overlap((Range, Range) set, bool full) =>
         (full)
-        ? (range1.Start.Value <= range2.Start.Value && range1.End.Value >= range2.End.Value) || (range2.Start.Value <= range1.Start.Value && range2.End.Value >= range1.End.Value)
-        : (range1.Start.Value <= range2.Start.Value && range1.End.Value >= range2.Start.Value) || (range2.Start.Value <= range1.Start.Value && range2.End.Value >= range1.Start.Value);
+        ? (set.Item1.Start.Value <= set.Item2.Start.Value && set.Item1.End.Value >= set.Item2.End.Value) || (set.Item2.Start.Value <= set.Item1.Start.Value && set.Item2.End.Value >= set.Item1.End.Value)
+        : (set.Item1.Start.Value <= set.Item2.Start.Value && set.Item1.End.Value >= set.Item2.Start.Value) || (set.Item2.Start.Value <= set.Item1.Start.Value && set.Item2.End.Value >= set.Item1.Start.Value);
 
 }
