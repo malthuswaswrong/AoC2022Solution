@@ -41,8 +41,8 @@ public class Challenges
     }
     
     [Theory]
-    [InlineData(DataSet.Example, "")]
-    [InlineData(DataSet.Challenge, "")]
+    [InlineData(DataSet.Example, "157")]
+    [InlineData(DataSet.Challenge, "8105")]
     public void Day03_Part1(DataSet dataSet, string actual)
     {
         var cut = new Day03();
@@ -50,8 +50,8 @@ public class Challenges
     }
 
     [Theory]
-    [InlineData(DataSet.Example, "")]
-    [InlineData(DataSet.Challenge, "")]
+    [InlineData(DataSet.Example, "70")]
+    [InlineData(DataSet.Challenge, "2363")]
     public void Day03_Part2(DataSet dataSet, string actual)
     {
         var cut = new Day03();
@@ -59,8 +59,8 @@ public class Challenges
     }
 
     [Theory]
-    [InlineData(DataSet.Example, "")]
-    [InlineData(DataSet.Challenge, "")]
+    [InlineData(DataSet.Example, "2")]
+    [InlineData(DataSet.Challenge, "542")]
     public void Day04_Part1(DataSet dataSet, string actual)
     {
         var cut = new Day04();
@@ -68,8 +68,8 @@ public class Challenges
     }
 
     [Theory]
-    [InlineData(DataSet.Example, "")]
-    [InlineData(DataSet.Challenge, "")]
+    [InlineData(DataSet.Example, "4")]
+    [InlineData(DataSet.Challenge, "900")]
     public void Day04_Part2(DataSet dataSet, string actual)
     {
         var cut = new Day04();
